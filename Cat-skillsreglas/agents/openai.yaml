@@ -1,0 +1,8 @@
+﻿interface:
+  display_name: "Cat Skills Reglas"
+  short_description: "Reglas backend SQL Server seguro"
+  brand_color: "#2563EB"
+  default_prompt: "Use $Cat-skillsreglas para implementar o auditar backend SQL Server con stored procedures, capas limpias y seguridad OWASP."
+
+policy:
+  allow_implicit_invocation: true
