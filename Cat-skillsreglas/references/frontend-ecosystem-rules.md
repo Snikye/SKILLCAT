@@ -19,6 +19,7 @@ Before adding Node dependencies:
 
 - Prefer existing project dependencies.
 - Avoid alpha, beta, rc, deprecated, or low-trust packages.
+- Reject packages with active critical vulnerability alerts when a safer path exists.
 - Prefer stable, maintained packages with clear versioning.
 - Run the project dependency audit workflow when available.
 

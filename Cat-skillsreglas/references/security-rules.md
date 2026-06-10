@@ -2,10 +2,10 @@
 
 ## Secrets and Configuration
 
-- Never hardcode JWT secrets, API keys, connection strings, credentials, tokens, or default production secrets.
+- Never hardcode JWT keys, API keys, connection strings, credentials, tokens, certificates, or default production secrets.
 - Read secrets from secure configuration, environment variables, container secrets, or an approved secret manager.
 - Validate required secrets during startup.
-- Secrets used for signing should be at least 32 characters unless the project defines a stronger requirement.
+- Signing keys and credentials must satisfy project-defined length, entropy, rotation, and custody requirements.
 
 ## Sensitive Comparisons
 
@@ -16,9 +16,9 @@ For .NET, prefer `CryptographicOperations.FixedTimeEquals` with normalized byte 
 ## Error Handling
 
 - Return generic, sanitized error responses to clients.
-- Do not expose stack traces, SQL errors, filesystem paths, raw parameters, tokens, claims, or internal exception messages.
+- Do not expose stack traces, SQL errors, filesystem paths, raw parameters, tokens, claims, native database messages, or internal exception messages.
 - Log enough diagnostic detail for operators, but exclude or mask secrets and sensitive data.
-- Use specific catch blocks when they help separate expected business failures from infrastructure failures.
+- Route infrastructure exceptions through global exception handling rather than duplicating low-level catch blocks in endpoints.
 
 ## Authorization and Input
 
